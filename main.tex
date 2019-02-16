@@ -1,0 +1,153 @@
+\documentclass{ssiBio}
+\usepackage{comment}
+\title{TdT Charecterization Expiriment} % CHANGE THIS
+\author{Written by \textbf{Michael Uttmark}}
+\date{\textbf{Written:} 2/16/19 \quad\textbf{Performed:} TBD\quad\textbf{Printed:} \today{}}
+
+\begin{document}
+\maketitle
+
+\setVar{TV}{15uL}
+\setVar{BSStartConc}{100uM}
+\setVar{BSStartMolWeight}{6133g/mol}
+\setVar{dATPConc}{10mM}
+
+\setVar{TdTBuffVol}{3uL}
+\setVar{TdTVol}{2uL}
+\setVar{DNASolVol}{5uL}
+\setVar{NucSolVol}{5uL}
+\setVar{EDTAVol}{5uL}
+
+\setVar{PANDNAConc}{2ng/uL}
+\setVar{TdTSmudgeFactor}{3}
+\setVar{SampleSmudgeFactor}{100}
+
+
+\setVar{Time1}{30s} % total time for tdt reaction
+\setVar{Time2}{45s}
+\setVar{Time3}{1min}
+\setVar{Time4}{2min}
+\setVar{Time5}{3min}
+\setVar{Time6}{5min}
+\setVar{Time7}{7min}
+\setVar{Time8}{10min}
+\setVar{Time9}{15min}
+\setVar{Time10}{20min}
+\setVar{Time11}{30min}
+
+\setVar{nuConA}{2} % Nucleotide:DNA ratio in moles
+\setVar{nuConB}{3}
+\setVar{nuConC}{5}
+\setVar{nuConD}{7}
+\setVar{nuConE}{10}
+\setVar{nuConF}{15}
+\setVar{nuConG}{20}
+\setVar{nuConH}{40}
+
+\setCalcVar{RawDNAMolPerSample}{((((PANDNAConc*TdTSmudgeFactor)/(BSStartMolWeight))*(TV+EDTAVol))) to pmol}
+\setCalcVar{RawDNAuLPerSample}{(RawDNAMolPerSample*(BSStartConc)^-1) to uL}
+\setCalcVar{DNADilute}{RawDNAuLPerSample*SampleSmudgeFactor to uL}
+\setCalcVar{H2ODilute}{DNASolVol*SampleSmudgeFactor-DNADilute to uL}
+
+\setVar{dATPDiluteTwoConc}{.1mM}
+\setVar{dATPDiluteConc}{1mM}
+\setVar{dATPSmudgeFactor}{2}
+
+\setVar{dATPDilInter}{RawDNAMolPerSample*((dATPDiluteConc)^-1)*12*dATPSmudgeFactor}
+\setVar{dATPDilInterTwo}{RawDNAMolPerSample*((dATPDiluteTwoConc)^-1)*12*dATPSmudgeFactor}
+\section{Procedure Purpose}
+Charecterize the rate of \tdt{} extension of ssDNA with varying nucleotide:DNA ratios.
+\section{Overview}
+An array of samples will be tested with these conditions (dATP:DNA ratio (moles) by time of reaction):
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        & \getVar{Time1} & \getVar{Time2} & \getVar{Time3} & \getVar{Time4} & \getVar{Time5} & \getVar{Time6} & \getVar{Time7} & \getVar{Time8} & \getVar{Time9} & \getVar{Time10} & \getVar{Time11} & Controls\\\hline
+        \getVar{nuConA}&&&&&&&&&&&&\\\hline
+        \getVar{nuConB}&&&&&&&&&&&&\\\hline
+        \getVar{nuConC}&&&&&&&&&&&&\\\hline
+        \getVar{nuConD}&&&&&&&&&&&&\\\hline
+        \getVar{nuConE}&&&&&&&&&&&&\\\hline
+        \getVar{nuConF}&&&&&&&&&&&&\\\hline
+        \getVar{nuConG}&&&&&&&&&&&&\\\hline
+        \getVar{nuConH}&&&&&&&&&&&&H12\\\hline
+    \end{tabular}
+\end{center}
+
+Samples are addressed by their 96Well plate location (eg. H12, as marked)
+
+They will be stopped with EDTA and sent to PAN. The most promising samples will be run on a gel for better resolution.
+
+For PAN analysis, we will be sending in \tdt{} extended samples with a concentration of \calc{PANDNAConc*TdTSmudgeFactor to ng/uL}.
+\section{Safety Information}
+\begin{safety}
+\begin{enumerate}
+\tdtSafety{}
+\SYBRGOLD{}
+\item{Working in a communal lab space is dangerous. Do not assume your fellow workers cleaned up sufficiently.}
+\end{enumerate}
+\end{safety}
+
+\section{Dilutions}
+\begin{enumerate}
+    \item{Dilute \getVar{DNADilute} of BSStart (\getVar{BSStartConc}) in \getVar{H2ODilute}. Votex Well.}
+    \item{Dilute \getVar{dATPConc} dATP Stock to 100\uL{} of \getVar{dATPDiluteConc}}
+    \item{Dilute \getVar{dATPConc} dATP Stock to 100\uL{} of \getVar{dATPDiluteTwoConc}}
+\end{enumerate}
+
+\section{Procedure}% CHANGE THIS
+\subsection{Prepare Plate}
+In to each well, pipette \getVar{TdTBuffVol} of \tdt{} buffer.
+
+For each row, create the following dilutions of dATP from dilutes prepared before:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Row&dATP Dilute (\getVar{dATPDiluteConc})& dATP Dilute (\getVar{dATPDiluteTwoConc})&Water\\\hline
+        A&\calc{nuConA*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConA*dATPDilInter to uL}\\\hline
+        B&\calc{nuConB*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConB*dATPDilInter to uL}\\\hline
+        C&\calc{nuConC*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConC*dATPDilInter to uL}\\\hline
+        D&\calc{nuConD*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConD*dATPDilInter to uL}\\\hline
+        E&\calc{nuConE*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConE*dATPDilInter to uL}\\\hline
+        F&\calc{nuConF*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConF*dATPDilInter to uL}\\\hline
+        G&&\calc{nuConG*dATPDilInterTwo to uL}&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConG*dATPDilInterTwo to uL}\\\hline
+        H&&\calc{nuConH*dATPDilInterTwo to uL}&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConH*dATPDilInterTwo to uL}\\\hline
+    \end{tabular}
+\end{center}
+
+For each column \textbf{except for 12} pipette \getVar{TdTVol} of \tdt{} into each well.
+
+For each well in each row, pipette \getVar{NucSolVol} of the corresponding dilute.
+
+\subsection{Begin Expiriment}
+
+For each time, begin by pipetting in \getVar{DNASolVol}. Wait until the alloted time for that column has elapsed and cease the rection with \getVar{EDTAVol} of EDTA.
+
+\subsection{Controls}
+
+No \tdt{} should be added to the controls. H12 must be left empty. 
+
+\subsection{Sending to PAN}
+
+Pipette 10uL out of each well and store in another well plate for a future gel run. Pipette in 20\uL{} of Nuclease Free Water into each well and submit to PAN.
+
+\section{Stop Procedure}
+Store the DNA 10 uM stocks in the -20 freezer immediately after use. Ensure that the SYBR Gold has been returned to the -20 freezer, and clean up the work area. Save all samples for possible future use.
+Return polyamines to the cold room. Do not dispose of serial dilutions unless through a licensed chemical professional.
+
+\begin{comment}
+\subsection{Analysis}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=6in]{./gels/Gel_1.png}
+\label{}
+\caption{Gel 1}
+\end{figure}
+
+\bibliographystyle{ieeetr}
+\bibliography{main}
+\end{comment}
+\end{document}
