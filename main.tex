@@ -1,6 +1,6 @@
 \documentclass{ssiBio}
 \usepackage{comment}
-\title{TdT Charecterization Expiriment} % CHANGE THIS
+\title{TdT Characterization Experiment} % CHANGE THIS
 \author{Written by \textbf{Michael Uttmark}}
 \date{\textbf{Written:} 2/16/19 \quad\textbf{Performed:} TBD\quad\textbf{Printed:} \today{}}
 
@@ -10,7 +10,7 @@
 \setVar{TV}{15uL}
 \setVar{BSStartConc}{100uM}
 \setVar{BSStartMolWeight}{6133g/mol}
-\setVar{dATPConc}{10mM}
+\setVar{dTTPConc}{10mM}
 
 \setVar{TdTBuffVol}{3uL}
 \setVar{TdTVol}{2uL}
@@ -49,16 +49,16 @@
 \setCalcVar{DNADilute}{RawDNAuLPerSample*SampleSmudgeFactor to uL}
 \setCalcVar{H2ODilute}{DNASolVol*SampleSmudgeFactor-DNADilute to uL}
 
-\setVar{dATPDiluteTwoConc}{.1mM}
-\setVar{dATPDiluteConc}{1mM}
-\setVar{dATPSmudgeFactor}{2}
+\setVar{dTTPDiluteTwoConc}{1mM}
+\setVar{dTTPDiluteConc}{.1mM}
+\setVar{dTTPSmudgeFactor}{2}
 
-\setVar{dATPDilInter}{RawDNAMolPerSample*((dATPDiluteConc)^-1)*12*dATPSmudgeFactor}
-\setVar{dATPDilInterTwo}{RawDNAMolPerSample*((dATPDiluteTwoConc)^-1)*12*dATPSmudgeFactor}
+\setVar{dTTPDilInter}{RawDNAMolPerSample*((dTTPDiluteConc)^-1)*12*dTTPSmudgeFactor}
+\setVar{dTTPDilTwoInter}{RawDNAMolPerSample*((dTTPDiluteTwoConc)^-1)*12*dTTPSmudgeFactor}
 \section{Procedure Purpose}
 Charecterize the rate of \tdt{} extension of ssDNA with varying nucleotide:DNA ratios.
 \section{Overview}
-An array of samples will be tested with these conditions (dATP:DNA ratio (moles) by time of reaction):
+An array of samples will be tested with these conditions (dTTP:DNA ratio (moles) by time of reaction):
 
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -92,28 +92,28 @@ For PAN analysis, we will be sending in \tdt{} extended samples with a concentra
 \section{Dilutions}
 \begin{enumerate}
     \item{Dilute \getVar{DNADilute} of BSStart (\getVar{BSStartConc}) in \getVar{H2ODilute}. Votex Well.}
-    \item{Dilute \getVar{dATPConc} dATP Stock to 100\uL{} of \getVar{dATPDiluteConc}}
-    \item{Dilute \getVar{dATPConc} dATP Stock to 100\uL{} of \getVar{dATPDiluteTwoConc}}
+    \item{Dilute \getVar{dTTPConc} dTTP Stock to 100\uL{} of \getVar{dTTPDiluteConc}}
+    \item{Dilute \getVar{dTTPConc} dTTP Stock to 100\uL{} of \getVar{dTTPDiluteTwoConc}}
 \end{enumerate}
 
 \section{Procedure}% CHANGE THIS
 \subsection{Prepare Plate}
 In to each well, pipette \getVar{TdTBuffVol} of \tdt{} buffer.
 
-For each row, create the following dilutions of dATP from dilutes prepared before:
+For each row, create the following dilutions of dTTP from dilutes prepared before:
 
 \begin{center}
     \begin{tabular}{|c|c|c|c|}
         \hline
-        Row&dATP Dilute (\getVar{dATPDiluteConc})& dATP Dilute (\getVar{dATPDiluteTwoConc})&Water\\\hline
-        A&\calc{nuConA*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConA*dATPDilInter to uL}\\\hline
-        B&\calc{nuConB*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConB*dATPDilInter to uL}\\\hline
-        C&\calc{nuConC*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConC*dATPDilInter to uL}\\\hline
-        D&\calc{nuConD*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConD*dATPDilInter to uL}\\\hline
-        E&\calc{nuConE*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConE*dATPDilInter to uL}\\\hline
-        F&\calc{nuConF*dATPDilInter to uL}&&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConF*dATPDilInter to uL}\\\hline
-        G&&\calc{nuConG*dATPDilInterTwo to uL}&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConG*dATPDilInterTwo to uL}\\\hline
-        H&&\calc{nuConH*dATPDilInterTwo to uL}&\calc{(12*dATPSmudgeFactor*NucSolVol)-nuConH*dATPDilInterTwo to uL}\\\hline
+        Row&dTTP Dilute (\getVar{dTTPDiluteConc})& dTTP Dilute (\getVar{dTTPDiluteTwoConc})&Water\\\hline
+        A&\calc{nuConA*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConA*dTTPDilInter to uL}\\\hline
+        B&\calc{nuConB*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConB*dTTPDilInter to uL}\\\hline
+        C&\calc{nuConC*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConC*dTTPDilInter to uL}\\\hline
+        D&\calc{nuConD*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConD*dTTPDilInter to uL}\\\hline
+        E&\calc{nuConE*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConE*dTTPDilInter to uL}\\\hline
+        F&\calc{nuConF*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConF*dTTPDilInter to uL}\\\hline
+        G&&\calc{nuConG*dTTPDilTwoInter to uL}&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConG*dTTPDilTwoInter to uL}\\\hline
+        H&&\calc{nuConH*dTTPDilTwoInter to uL}&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConH*dTTPDilTwoInter to uL}\\\hline
     \end{tabular}
 \end{center}
 
@@ -123,7 +123,7 @@ For each well in each row, pipette \getVar{NucSolVol} of the corresponding dilut
 
 \subsection{Begin Expiriment}
 
-For each time, begin by pipetting in \getVar{DNASolVol}. Wait until the alloted time for that column has elapsed and cease the rection with \getVar{EDTAVol} of EDTA.
+For each time, begin by pipetting in \getVar{DNASolVol} of the DNA dilute prepared earlier. Wait until the allotted time for that column has elapsed and cease the reaction with \getVar{EDTAVol} of EDTA.
 
 \subsection{Controls}
 
@@ -131,7 +131,7 @@ No \tdt{} should be added to the controls. H12 must be left empty.
 
 \subsection{Sending to PAN}
 
-Pipette 10uL out of each well and store in another well plate for a future gel run. Pipette in 20\uL{} of Nuclease Free Water into each well and submit to PAN.
+Pipette 10uL out of each well and store in another well plate for a future gel run. Pipette in 20\uL{} of Nuclease-Free Water into each well and submit to PAN.
 
 \section{Stop Procedure}
 Store the DNA 10 uM stocks in the -20 freezer immediately after use. Ensure that the SYBR Gold has been returned to the -20 freezer, and clean up the work area. Save all samples for possible future use.
