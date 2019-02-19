@@ -23,6 +23,10 @@ client = wolframalpha.Client(apiKey)
 latexVars = {}
 
 def setVar(name, value):
+    for otherName in latexVars:
+        if name in otherName or otherName in name:
+            l.critical("Invalid vars requested, {0} and {1}".format(name, otherName))
+            raise Exception("Invalid var names requested (one is a subset of the other): '{0}' and '{1}'. Please change one!".format(name, otherName))
     latexVars[name] = [value]
 
 def getVar(name):
