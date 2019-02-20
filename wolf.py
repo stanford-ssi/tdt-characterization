@@ -37,7 +37,7 @@ def getVars():
 def get(prompt):
     for x in range(0,5):
         for var in getVars():
-            prompt = prompt.replace(var, getVar(var))
+            prompt = prompt.replace(var, "("+getVar(var)+")")
     return prompt
 
 def askWolfram(prompt):

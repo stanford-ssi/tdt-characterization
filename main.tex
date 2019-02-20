@@ -7,7 +7,7 @@
 \begin{document}
 \maketitle
 
-\setVar{TV}{15uL}
+\setVar{TotalInitialVolume}{15uL}
 \setVar{BSStartConc}{100uM}
 \setVar{BSStartMolWeight}{6133g/mol}
 \setVar{dTTPConc}{10mM}
@@ -32,8 +32,8 @@
 \setVar{Time7}{7min}
 \setVar{Time8}{10min}
 \setVar{Time9}{15min}
-\setVar{Time10}{20min}
-\setVar{Time11}{30min}
+\setVar{Time-10}{20min}
+\setVar{Time-11}{30min}
 
 \setVar{nuConA}{2} % Nucleotide:DNA ratio in moles
 \setVar{nuConB}{3}
@@ -44,7 +44,7 @@
 \setVar{nuConG}{20}
 \setVar{nuConH}{40}
 
-\setCalcVar{RawDNAMolPerSample}{((((PANDNAConc*TdTSmudgeFactor)/(BSStartMolWeight))*(TV+EDTAVol))) to pmol}
+\setCalcVar{RawDNAMolPerSample}{((((PANDNAConc*TdTSmudgeFactor)/(BSStartMolWeight))*(TotalInitialVolume+EDTAVol))) to pmol}
 \setCalcVar{RawDNAuLPerSample}{(RawDNAMolPerSample*(BSStartConc)^-1) to uL}
 \setCalcVar{DNADilute}{RawDNAuLPerSample*SampleSmudgeFactor to uL}
 \setCalcVar{H2ODilute}{DNASolVol*SampleSmudgeFactor-DNADilute to uL}
@@ -55,6 +55,20 @@
 
 \setVar{dTTPDilInter}{RawDNAMolPerSample*((dTTPDiluteConc)^-1)*12*dTTPSmudgeFactor}
 \setVar{dTTPDilTwoInter}{RawDNAMolPerSample*((dTTPDiluteTwoConc)^-1)*12*dTTPSmudgeFactor}
+
+\setVar{DNAContSolVol}{20uL}
+\setVar{DNAStockConc}{100uM}
+\setCalcVar{TotalDNAContVol}{DNAContSolVol*96*1.5}
+\setVar{LongDNA}{90-mer (AGTATTCCTGTCCCCGCTCGGTATCGTGATGCTCGTGCTTATGCGAACGTGCAGATGACGTTTGGCGCGTATTTAGATGCGCTAGACGTT)}
+\setVar{ShortDNA}{BS-Comp-6(AACGCA)}
+\setVar{LongWeightDNA}{27786g/mol}
+\setVar{ShortWeightDNA}{1785g/mol}
+
+%\setVar{PANDNAConc}{2ng/uL}
+\setCalcVar{LongVolDNA}{(LongWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc)^-1)^-1 to uL}
+\setCalcVar{ShortVolDNA}{(ShortWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc)^-1)^-1 to uL}
+\setCalcVar{DNAContWaterVol}{TotalDNAContVol-(LongVolDNA+ShortVolDNA)}
+
 \section{Procedure Purpose}
 Charecterize the rate of \tdt{} extension of ssDNA with varying nucleotide:DNA ratios.
 \section{Overview}
@@ -63,7 +77,7 @@ An array of samples will be tested with these conditions (dTTP:DNA ratio (moles)
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        & \getVar{Time1} & \getVar{Time2} & \getVar{Time3} & \getVar{Time4} & \getVar{Time5} & \getVar{Time6} & \getVar{Time7} & \getVar{Time8} & \getVar{Time9} & \getVar{Time10} & \getVar{Time11} & Controls\\\hline
+        & \getVar{Time1} & \getVar{Time2} & \getVar{Time3} & \getVar{Time4} & \getVar{Time5} & \getVar{Time6} & \getVar{Time7} & \getVar{Time8} & \getVar{Time9} & \getVar{Time-10} & \getVar{Time-11} & Controls\\\hline
         \getVar{nuConA}&&&&&&&&&&&&\\\hline
         \getVar{nuConB}&&&&&&&&&&&&\\\hline
         \getVar{nuConC}&&&&&&&&&&&&\\\hline
@@ -94,6 +108,7 @@ For PAN analysis, we will be sending in \tdt{} extended samples with a concentra
     \item{Dilute \getVar{DNADilute} of BSStart (\getVar{BSStartConc}) in \getVar{H2ODilute}. Votex Well.}
     \item{Dilute \getVar{dTTPConc} dTTP Stock to 100\uL{} of \getVar{dTTPDiluteConc} (making at least \calc{(nuConA+nuConB+nuConC+nuConD+nuConE+nuConF)*(dTTPDilInter) to uL})}
     \item{Dilute \getVar{dTTPConc} dTTP Stock to 100\uL{} of \getVar{dTTPDiluteTwoConc} (making at least \calc{(nuConG+nuConH)*dTTPDilTwoInter to uL})}
+    \item{Dilute \getVar{LongVolDNA} of \getVar{LongDNA} and \getVar{ShortVolDNA} of \getVar{ShortDNA} (both from \getVar{DNAStockConc} stock) into \getVar{DNAContWaterVol} Nuclease-Free water. Vortex well before use, this is the DNA Control Solution.}
 \end{enumerate}
 
 \section{Procedure}% CHANGE THIS
@@ -131,7 +146,7 @@ No \tdt{} should be added to the controls. H12 must be left empty.
 
 \subsection{Sending to PAN}
 
-Pipette 10uL out of each well and store in another well plate for a future gel run. Pipette in 20\uL{} of Nuclease-Free Water into each well and submit to PAN. (This gives us roughly 60ng of DNA per lane to run on a gel later)
+Pipette 10uL out of each well and store in another well plate for a future gel run. Pipette in \getVar{DNAContSolVol} of DNA Control Solution into each well and submit to PAN. (This gives us roughly 60ng of DNA per lane to run on a gel later)
 
 \section{Stop Procedure}
 Store the DNA 10 uM stocks in the -20 freezer immediately after use. Ensure that the SYBR Gold has been returned to the -20 freezer, and clean up the work area. Save all samples for possible future use.
