@@ -15,6 +15,9 @@
 \RequirePackage{tcolorbox}
 \RequirePackage[nodayofweek]{datetime}
 
+\RequirePackage{chemfig}
+\RequirePackage{mhchem}
+
 % Sets page size, footer, indent and margins
 \RequirePackage[letterpaper,top=2.5cm,bottom=3.5cm,left=2.25cm,right=2.25cm,marginparwidth=2.25cm]{geometry}
 \setlength\parindent{0pt}
