@@ -24,7 +24,7 @@
 \setVar{SampleSmudgeFactor}{100}
 
 
-\setVar{Time1}{30s} % total time for tdt reaction
+\setVar{Time1}{30s} % total time for tdt reaction.
 \setVar{Time2}{45s}
 \setVar{Time3}{1min}
 \setVar{Time4}{2min}
@@ -59,7 +59,7 @@
 
 \setVar{DNAContSolVol}{20uL}
 \setVar{DNAStockConc}{100uM}
-\setCalcVar{TotalDNAContVol}{DNAContSolVol*96*1.5}
+\setCalcVar{TotalDNAContVol}{2000uL*1}%{DNAContSolVol*96*1.05}
 \setVar{LongDNA}{90-mer (AGTATTCCTGTCCCCGCTCGGTATCGTGATGCTCGTGCTTATGCGAACGTGCAGATGACGTTTGGCGCGTATTTAGATGCGCTAGACGTT)}
 \setVar{ShortDNA}{BS-Comp-8 (AACGCACA)}
 \setVar{MedDNA}{15Mer (ATGGACATGGACTAC)}
@@ -71,9 +71,9 @@
 \setVar{LongWDNA}{1}
 
 %\setVar{PANDNAConc}{2ng/uL}
-\setCalcVar{LongVolDNA}{(LongWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc*ShortWDNA)^-1)^-1 to uL}
-\setCalcVar{MedVolDNA}{(MedWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc*MedWDNA)^-1)^-1 to uL}
-\setCalcVar{ShortVolDNA}{(ShortWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc*ShortWDNA)^-1)^-1 to uL}
+\setCalcVar{LongVolDNA}{(LongWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol^-1*((30uL))*(PANDNAConc*LongWDNA)^-1)^-1 to uL}
+\setCalcVar{MedVolDNA}{(MedWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol^-1*((30uL))*(PANDNAConc*MedWDNA)^-1)^-1 to uL}
+\setCalcVar{ShortVolDNA}{(ShortWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol^-1*((30uL))*(PANDNAConc*ShortWDNA)^-1)^-1 to uL}
 \setCalcVar{DNAContWaterVol}{TotalDNAContVol-(LongVolDNA+ShortVolDNA+MedVolDNA)}
 
 \section{Procedure Purpose}
@@ -149,7 +149,7 @@ For each time, begin by pipetting in \getVar{DNASolVol} of the DNA dilute prepar
 
 \subsection{Controls}
 
-No \tdt{} should be added to the controls. H12 must be left empty. 
+No \tdt{} should be added to the controls. H12 must be left empty.
 
 \subsection{Sending to PAN}
 
