@@ -61,14 +61,20 @@
 \setVar{DNAStockConc}{100uM}
 \setCalcVar{TotalDNAContVol}{DNAContSolVol*96*1.5}
 \setVar{LongDNA}{90-mer (AGTATTCCTGTCCCCGCTCGGTATCGTGATGCTCGTGCTTATGCGAACGTGCAGATGACGTTTGGCGCGTATTTAGATGCGCTAGACGTT)}
-\setVar{ShortDNA}{BS-Comp-6 (AACGCA)}
+\setVar{ShortDNA}{BS-Comp-8 (AACGCACA)}
+\setVar{MedDNA}{15Mer (ATGGACATGGACTAC)}
 \setVar{LongWeightDNA}{27786g/mol}
-\setVar{ShortWeightDNA}{1785g/mol}
+\setVar{MedWeightDNA}{4601g/mol}
+\setVar{ShortWeightDNA}{2387g/mol}
+\setVar{ShortWDNA}{0.5}
+\setVar{MedWDNA}{1}
+\setVar{LongWDNA}{2}
 
 %\setVar{PANDNAConc}{2ng/uL}
-\setCalcVar{LongVolDNA}{(LongWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc)^-1)^-1 to uL}
-\setCalcVar{ShortVolDNA}{(ShortWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc)^-1)^-1 to uL}
-\setCalcVar{DNAContWaterVol}{TotalDNAContVol-(LongVolDNA+ShortVolDNA)}
+\setCalcVar{LongVolDNA}{(LongWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc*ShortWDNA)^-1)^-1 to uL}
+\setCalcVar{MedVolDNA}{(MedWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc*MedWDNA)^-1)^-1 to uL}
+\setCalcVar{ShortVolDNA}{(ShortWeightDNA*DNAStockConc*((TotalDNAContVol)^-1)*DNAContSolVol*((30uL)^-1)*(PANDNAConc*ShortWDNA)^-1)^-1 to uL}
+\setCalcVar{DNAContWaterVol}{TotalDNAContVol-(LongVolDNA+ShortVolDNA+MedVolDNA)}
 
 \section{Procedure Purpose}
 Charecterize the rate of \tdt{} extension of ssDNA with varying nucleotide:DNA ratios.
@@ -109,7 +115,7 @@ For PAN analysis, we will be sending in \tdt{} extended samples with a concentra
     \item{Dilute \getVar{DNADilute} of BSStart (\getVar{BSStartConc}) in \getVar{H2ODilute}. Votex Well.}
     \item{Dilute \getVar{dTTPConc} dTTP Stock to 100\uL{} of \getVar{dTTPDiluteConc} (making at least \calc{(nuConA+nuConB+nuConC+nuConD+nuConE+nuConF)*(dTTPDilInter) to uL})}
     \item{Dilute \getVar{dTTPConc} dTTP Stock to 100\uL{} of \getVar{dTTPDiluteTwoConc} (making at least \calc{(nuConG+nuConH)*dTTPDilTwoInter to uL})}
-    \item{Dilute \getVar{LongVolDNA} of \getVar{LongDNA} and \getVar{ShortVolDNA} of \getVar{ShortDNA} (both from \getVar{DNAStockConc} stock) into \getVar{DNAContWaterVol} Nuclease-Free water. Vortex well before use, this is the DNA Control Solution.}
+    \item{Dilute \getVar{LongVolDNA} of \getVar{LongDNA}, \getVar{MedVolDNA} of \getVar{MedDNA} and \getVar{ShortVolDNA} of \getVar{ShortDNA} (both from \getVar{DNAStockConc} stock) into \getVar{DNAContWaterVol} Nuclease-Free water. Vortex well before use, this is the DNA Control Solution.}
 \end{enumerate}
 
 \section{Procedure}% CHANGE THIS
