@@ -35,7 +35,7 @@ def getVars():
     return [x for x in latexVars]
 
 def get(prompt):
-    for x in range(0,5):
+    while any(var in prompt for var in getVars()):
         for var in getVars():
             prompt = prompt.replace(var, "("+getVar(var)+")")
     return prompt
