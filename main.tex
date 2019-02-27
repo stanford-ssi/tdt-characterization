@@ -10,7 +10,7 @@
 \setVar{TotalInitialVolume}{15uL}
 \setVar{BSStartConc}{100uM}
 \setVar{BSStartMolWeight}{6133g/mol}
-\setVar{dTTPConc}{10mM}
+\setVar{dTTPConc}{100mM}
 
 \setVar{TdTBuffVol}{1.5uL}
 \setVar{CoCl2Vol}{1.5uL}
@@ -59,7 +59,7 @@
 
 \setVar{DNAContSolVol}{20uL}
 \setVar{DNAStockConc}{100uM}
-\setCalcVar{TotalDNAContVol}{2000uL*1}%{DNAContSolVol*96*1.05}
+\setCalcVar{TotalDNAContVol}{2000uL*1} %{DNAContSolVol*96*1.05}
 \setVar{LongDNA}{90-mer (AGTATTCCTGTCCCCGCTCGGTATCGTGATGCTCGTGCTTATGCGAACGTGCAGATGACGTTTGGCGCGTATTTAGATGCGCTAGACGTT)}
 \setVar{ShortDNA}{BS-Comp-8 (AACGCACA)}
 \setVar{MedDNA}{15Mer (ATGGACATGGACTAC)}
@@ -111,18 +111,47 @@ For PAN analysis, we will be sending in \tdt{} extended samples with a concentra
 \end{enumerate}
 \end{safety}
 
+\section{Materials}
+\begin{itemize}
+%\item{``BS\_Start\_pos5" Oligonucleotide (Sequence:  5'-AGTTACCATGACCGTGTGCGTTTTT-3')}
+%\item{``BS\_Start\_pos" Oligonucleotide (Sequence:  5'-AGTTACCATGACCGTGTGCGT-3')}
+
+\item{``BS\_Start" Oligonucleotide (Sequence:  5'-AGTTACCATGACCGTGTGCG-3')}
+
+%\item{``BS\_Comp\_6" Oligonucleotide (Sequence:  5'-AACGCA-3')}
+
+\item{``BS\_Comp\_8" Oligonucleotide (Sequence:  5'-AACGCACA-3')}
+\item{ \getVar{MedDNA}}
+\item{ \getVar{LongDNA}}
+\item{Terminal Deoxynucleotidyl Transferase (20 U/\uL{})}
+\item{dTTP (100 mM)}
+\item{NEB Terminal Transferase Buffer (10X)}
+\item{CoCl2 (10x)}
+%\item{Exonuclease T (5 U/\uL{})}
+%\item{SYBR Gold (10,000X)}
+%\item{NEBuffer 4 (10X)}
+%\item{TBE Buffer (1X)}
+%\item{Gel Loading Buffer II (2X)}
+%\item{Two Novex TBE Gels (20\%)}
+%\item{IDT 10/60 Ladder}
+\item{RNAse Free Water}
+%\item{RNAse Free PCR tubes}
+%\item{RNAse Free pipette tips}
+%\item{Two thermocyclers}
+\end{itemize}
+
 \section{Dilutions}
 \begin{enumerate}
-    \item{Dilute \getVar{DNADilute} of BSStart (\getVar{BSStartConc}) in \getVar{H2ODilute}. Vortex Well.}
-    \item{Dilute \getVar{dTTPConc} dTTP Stock to 100\uL{} of \getVar{dTTPDiluteConc} (making at least \calc{(nuConA+nuConB+nuConC+nuConD+nuConE+nuConF)*(dTTPDilInter) to uL})}
-    \item{Dilute \getVar{dTTPConc} dTTP Stock to 100\uL{} of \getVar{dTTPDiluteTwoConc} (making at least \calc{(nuConG+nuConH)*dTTPDilTwoInter to uL})}
-    \item{Dilute \getVar{LongVolDNA} of \getVar{LongDNA}, \getVar{MedVolDNA} of \getVar{MedDNA} and \getVar{ShortVolDNA} of \getVar{ShortDNA} (both from \getVar{DNAStockConc} stock) into \getVar{DNAContWaterVol} Nuclease-Free water. Vortex well before use, this is the DNA Control Solution.}
-    \item{Prepare a trough of 250\uL{} Buffer and 250\uL{} \ce{CoCl2}}
+    \item{Dilute \getVar{DNADilute} of BSStart (\getVar{BSStartConc}) in \getVar{H2ODilute} of nuclease-free water for a 24 ng/uL (3.914 uM) working stock. Vortex well.}
+    \item{Dilute 5 \uL{} \getVar{dTTPConc} dTTP Stock in 495 \uL{} water to 500\uL{} of \getVar{dTTPDiluteTwoConc} (making at least \calc{(nuConG+nuConH)*dTTPDilTwoInter to uL}). Vortex well.}
+    \item{Dilute 50 uL \getVar{dTTPDiluteTwoConc} dTTP Stock in 450\uL{} water to 500\uL{} of \getVar{dTTPDiluteConc} (making at least \calc{(nuConA+nuConB+nuConC+nuConD+nuConE+nuConF)*(dTTPDilInter) to uL})}
+    \item{Dilute 4.32 uL of \getVar{LongDNA}, 13.04 uL of \getVar{MedDNA} and 12.56 of \getVar{ShortDNA} (both from \getVar{DNAStockConc} stock) into 3970.08 \uL{} Nuclease-Free water in a 15 mL tube. Vortex well before use. This is the DNA Control Solution.}
+    \item{Prepare a trough of a mixture of 300\uL{} 10x Buffer and 300\uL{} 10x \ce{CoCl2}}
 \end{enumerate}
 
 \section{Procedure}% CHANGE THIS
 \subsection{Prepare Plate}
-In to each well, pipette 3\uL{} using a multichannel pipette of a 1:1 \ce{CoCl2}:10X TdT Buffer mixture into each cell. 
+In to each well, pipette 3\uL{} using a multichannel pipette from the 1:1 \ce{CoCl2}:10X TdT Buffer mixture into each well except H12. 
 
 For each row, create the following dilutions of dTTP from dilutes prepared before:
 
@@ -141,25 +170,24 @@ For each row, create the following dilutions of dTTP from dilutes prepared befor
     \end{tabular}
 \end{center}
 
-For each column \textbf{except for 12} pipette \getVar{TdTVol} of \tdt{} into each well.
+For each well in each row, pipette \getVar{NucSolVol} of the corresponding dTTP dilute (except H12).
 
-For each well in each row, pipette \getVar{NucSolVol} of the corresponding dilute.
+For each column \textbf{except for 12} pipette \getVar{TdTVol} of \tdt{} into each well except H12.
 
 \subsection{Begin Experiment}
 
-For each time in order of decreasing time, begin by pipetting in \getVar{DNASolVol} of the DNA dilute prepared earlier. Write down the time each column was started and stopped when time permits. Wait until the allotted time for that column has elapsed and cease the reaction with \getVar{EDTAVol} of EDTA.
+For each reaction in order of decreasing incubation time, begin by pipetting in \getVar{DNASolVol} of the DNA dilute prepared earlier. Write down the time each column was started and stopped when time permits. Wait until the allotted time for that column has elapsed and cease the reaction with \getVar{EDTAVol} of EDTA.
 
 \subsection{Controls}
 
-No \tdt{} should be added to the controls. H12 must be left empty.
+No \tdt{} should be added to the controls in column 12. H12 must be left empty.
 
 \subsection{Sending to PAN}
 
 Pipette 10uL out of each well and store in another well plate for a future gel run. Pipette in \getVar{DNAContSolVol} of DNA Control Solution into each well and submit to PAN. (This gives us roughly 60ng of DNA per lane to run on a gel later)
 
 \section{Stop Procedure}
-Store the DNA 10 uM stocks in the -20 freezer immediately after use. Ensure that the SYBR Gold has been returned to the -20 freezer, and clean up the work area. Save all samples for possible future use.
-Return polyamines to the cold room. Do not dispose of serial dilutions unless through a licensed chemical professional.
+Ensure that all reagents have been returned to their proper storage locations and clean up the work area. Save all samples in the -20 freezer for possible future use.
 
 \begin{comment}
 \subsection{Analysis}
@@ -174,4 +202,5 @@ Return polyamines to the cold room. Do not dispose of serial dilutions unless th
 \bibliographystyle{ieeetr}
 \bibliography{main}
 \end{comment}
+
 \end{document}
