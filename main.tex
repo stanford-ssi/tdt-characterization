@@ -7,17 +7,17 @@
 \begin{document}
 \maketitle
 
-\setVar{TotalInitialVolume}{15uL}
+\setVar{TotalInitialVolume}{2*15uL}
 \setVar{BSStartConc}{100uM}
 \setVar{BSStartMolWeight}{6133g/mol}
 \setVar{dTTPConc}{100mM}
 
-\setVar{TdTBuffVol}{1.5uL}
-\setVar{CoCl2Vol}{1.5uL}
-\setVar{TdTVol}{2uL}
-\setVar{DNASolVol}{5uL}
-\setVar{NucSolVol}{5uL}
-\setVar{EDTAVol}{5uL}
+\setCalcVar{TdTBuffVol}{1.5uL*2}
+\setCalcVar{CoCl2Vol}{1.5uL*2}
+\setCalcVar{TdTVol}{2uL*2}
+\setCalcVar{DNASolVol}{5uL*2}
+\setCalcVar{NucSolVol}{5uL*2}
+\setCalcVar{EDTAVol}{5uL*2}
 
 \setVar{PANDNAConc}{2ng/uL}
 \setVar{TdTSmudgeFactor}{3}
@@ -164,7 +164,7 @@ For each row, create the following dilutions of dTTP from dilutes prepared befor
         C&\calc{nuConC*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConC*dTTPDilInter to uL}\\\hline
         D&\calc{nuConD*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConD*dTTPDilInter to uL}\\\hline
         E&\calc{nuConE*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConE*dTTPDilInter to uL}\\\hline
-        F&\calc{nuConF*dTTPDilInter to uL}&&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConF*dTTPDilInter to uL}\\\hline
+        F&&\calc{nuConF*dTTPDilTwoInter to uL}&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConF*dTTPDilTwoInter to uL}\\\hline
         G&&\calc{nuConG*dTTPDilTwoInter to uL}&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConG*dTTPDilTwoInter to uL}\\\hline
         H&&\calc{nuConH*dTTPDilTwoInter to uL}&\calc{(12*dTTPSmudgeFactor*NucSolVol)-nuConH*dTTPDilTwoInter to uL}\\\hline
     \end{tabular}
