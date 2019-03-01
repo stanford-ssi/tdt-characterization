@@ -14,17 +14,17 @@ Overview
 An array of samples will be tested with these conditions (dTTP:DNA ratio
 (moles) by time of reaction):
 
-|1  | 2|3|4|5|6|7|8|9|10|11|12|
-|---|---|----|----|----|----|----|-----|-----|-----|-----|--------|
-|30s|45s|1min|2min|3min|5min|7min|10min|15min|20min|30min|Controls|
-|A  | 2 ||||||||||
-|B  | 3 ||||||||||
-|C  | 5 ||||||||||
-|D  | 7 ||||||||||
-|E  | 10||||||||||
-|F  | 15||||||||||
-|G  | 20||||||||||
-|H  | 40|||||||||H12                                                          |
+|1  | 2  |3   |4   |5   |6   |7   |8    |9    |10   |11   |12      |
+|---|----|----|----|----|----|----|-----|-----|-----|-----|--------|
+|30s|45s |1min|2min|3min|5min|7min|10min|15min|20min|30min|Controls|
+|A  | 2  |    |    |    |    |    |     |     |     |     |        |
+|B  | 3  |    |    |    |    |    |     |     |     |     |        |
+|C  | 5  |    |    |    |    |    |     |     |     |     |        |
+|D  | 7  |    |    |    |    |    |     |     |     |     |        |
+|E  | 10 |    |    |    |    |    |     |     |     |     |        |
+|F  | 15 |    |    |    |    |    |     |     |     |     |        |
+|G  | 20 |    |    |    |    |    |     |     |     |     |        |
+|H  | 40 |    |    |    |    |    |     |     |     |     | H12    |
 
 Samples are addressed by their 96Well plate location (eg. H12, as marked).
 They will be stopped with EDTA and sent to PAN. The most promising samples will be run on a gel for better resolution.
@@ -44,7 +44,7 @@ For PAN analysis, we will be sending in Terminal Deoxynucleotidyl Transferase ex
 ## Dilutions
 1. Dilute 39.1uL of BSStart (100uM, 6133Da) in 960.9uL of nuclease-free water for a 24 ng/uL (3.91 uM) working stock. Vortex well.
 2. Dilute 5uL 100mM dTTP Stock in 495 uL water to 500uL of 1mM Stock. Vortex well.
-4. Dilute 4.4 uL of 90-mer (AGTATTCCTGTCCCCGCTCGGTATCGTGATGCTCGTGCTTATGCGAACGTGCAGATGACGTTTGGCGCGTATTTAGATGCGCTAGACGTT, 100uM, 27786Da), 13uL of 15Mer (ATGGACATGGACTAC, 100uM, 4601Da) and 12.6uL of BS-Comp-8 (AACGCACA, 100uM, 2388Da) into 3970.08 uL Nuclease-Free water in a 15 mL tube. Vortex well before use. This is the DNA Control Solution, which will result in 1.02ng/uL, ..5ng/uL and .251ng/uL final concentrations of 90, 15 and 8nt control stands.
+4. Dilute 4.4 uL of 90-mer (AGTATT ... TAGACGTT, 100uM, 27786Da), 13uL of 15Mer (ATGGACATGGACTAC, 100uM, 4601Da) and 12.6uL of BS-Comp-8 (AACGCACA, 100uM, 2388Da) into 3970.08 uL Nuclease-Free water in a 15 mL tube. Vortex well before use. This is the DNA Control Solution, which will result in 1.0ng/uL, 0.5ng/uL and 0.25ng/uL final concentrations of 90nt, 15nt and 8nt control stands.
 5. Prepare a trough of a mixture of 600uL 10x Buffer and 600uL 10x CoCl2
 
 Procedure
