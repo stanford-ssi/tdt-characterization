@@ -42,6 +42,7 @@ For PAN analysis, we will be sending in Terminal Deoxynucleotidyl Transferase ex
 -   NEB Terminal Transferase Buffer (10X)
 -   CoCl2 (10x)
 -   RNAse Free Water
+-   EDTA (0.5M)
 
 ## Dilutions
 1. Dilute 39.1uL of BSStart (100uM, 6133Da) in 960.9uL of nuclease-free water for 1 mL of a 24 ng/uL (3.91 uM) working stock. Vortex well.
