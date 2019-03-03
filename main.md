@@ -84,4 +84,4 @@ For each column of reactions (except H12) in order of decreasing incubation time
 No Terminal Deoxynucleotidyl Transferase should be added to the controls in column 12. H12 must be left empty.
 
 ## Sending to PAN
-Pipette 20uL out of each well and store in another well plate for a future gel run. In the original well plate, pipette 40 uL DNA control solution into each well for a total volume of 60 uL and submit to PAN.
+In each well of a new 96 well plate, pipette 40uL of the DNA control solution. Pipette in 20uL from each corresponding well from the expirimental plate (A1 to A1, H12 to H12 etc). Keep the expirimental plate for running on a gel and submit the new plate to PAN for CE.
