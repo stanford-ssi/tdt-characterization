@@ -76,12 +76,18 @@ prepared before:
 
 For each well in each row, pipette 10uL of the corresponding dTTP dilute (except H12).
 
-For each column except for 12 pipette 4uL of Terminal Deoxynucleotidyl Transferase into each well (3 tubes). Multiple tubes of Terminal Deoxynucleotidyl Transferase will be added sequentially in row-major order, not pooled together.
+For each column except for 12, and for control wells A12, C12, E12, and G12, pipette 4uL of Terminal Deoxynucleotidyl Transferase into each well (3 tubes). Multiple tubes of Terminal Deoxynucleotidyl Transferase will be added sequentially in row-major order, not pooled together. 
+**Note:** The TdT in column 12 was added separately after all of the other tubes. 
 
-In column 12, pipette 4uL of Nuclease-Free water into each well (except H12) instead.
+In wells B12, D12, and F12, pipette 4uL of Nuclease-Free water instead of TdT.
+
+In wells A12, C12, E12, and G12, pipette 10uL of Nuclease-Free water instead of DNA.
 
 ## Begin Experiment
-For each column of reactions (except H12) in order of decreasing incubation time, begin by pipetting in 10uL of the DNA dilute prepared earlier into an entire column simultaneously using a multichannel pipette. Write down the time each column was started and stopped when time permits, and set a timer for the given reaction time. Wait until the allotted time for that column has elapsed and cease the reaction with 10uL of EDTA pipetted into the entire column (except H12) with a multichannel pipette.
+For each column of reactions except column 12, and for control wells B12, D12, and F12 in order of decreasing incubation time, begin by pipetting in 10uL of the DNA dilute prepared earlier into an entire column simultaneously using a multichannel pipette. Write down the time each column was started and stopped when time permits, and set a timer for the given reaction time. Wait until the allotted time for that column has elapsed and cease the reaction with 10uL of EDTA pipetted into the entire column (except H12) with a multichannel pipette.
+
+Add 10 uL of EDTA to column 12 after all other wells have been inactivated/after inactivation of the shortest time reaction. 
+**Note:** 1:11
 
 ## Controls
 No Terminal Deoxynucleotidyl Transferase should be added to the controls in column 12. H12 must be left empty.
