@@ -93,8 +93,9 @@ Add 10 uL of EDTA to column 12 after all other wells have been inactivated/after
 No Terminal Deoxynucleotidyl Transferase should be added to the controls in column 12. H12 must be left empty.
 
 ## Sending to PAN
-In each well of a new 96 well plate, pipette 40uL of the DNA control solution. Pipette in 20uL from each corresponding well from the expirimental plate (A1 to A1, H12 to H12 etc). Keep the expirimental plate for running on a gel and submit the new plate to PAN for CE.
+In each well of a new 96 well plate, pipette 20uL of the DNA control solution. Pipette in 10uL from each corresponding well from the experimental plate (A1 to A1, H12 to H12 etc). Keep the experimental plate for running on a gel and submit the new plate to PAN for CE.
 
 ## Practical Addendum of Mishaps
 
 B5 did not get nucleotides initially and this was fixed via a single channel pipetting.
+
