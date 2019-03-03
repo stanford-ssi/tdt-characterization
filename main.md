@@ -61,16 +61,16 @@ Into each well, pipette 6uL using a multichannel pipette from the TdT Buffer and
 For each row, create the following dilutions of dTTP from dilutes
 prepared before:
 
-|Row       |dTTP Dilute (1mM)| Water     |
-|----------|-----------------|-----------|
-|A (2:1)   | 7.8uL           | 992.2uL   |
-|B (3:1)   | 11.7uL          | 988.3uL   |
-|C (5:1)   | 19.6uL          | 980.4uL   |
-|D (7:1)   | 27.37uL         | 972.6uL   |
-|E (10:1)  | 39.1uL          | 960.9uL   |
-|F (15:1)  | 58.7uL          | 941.3uL   |
-|G (20:1)  | 78.2uL          | 921.8uL   |
-|H (40:1)  | 156.4uL         | 843.6uL   |
+|Row       |dTTP Working Stock (1mM)| Water     |
+|----------|------------------------|-----------|
+|A (2:1)   | 7.8uL                  | 992.2uL   |
+|B (3:1)   | 11.7uL                 | 988.3uL   |
+|C (5:1)   | 19.6uL                 | 980.4uL   |
+|D (7:1)   | 27.37uL                | 972.6uL   |
+|E (10:1)  | 39.1uL                 | 960.9uL   |
+|F (15:1)  | 58.7uL                 | 941.3uL   |
+|G (20:1)  | 78.2uL                 | 921.8uL   |
+|H (40:1)  | 156.4uL                | 843.6uL   |
 
 For each well in each row, pipette 10uL of the corresponding dTTP dilute (except H12).
 
