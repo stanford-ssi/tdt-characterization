@@ -77,7 +77,7 @@ prepared before:
 For each well in each row, pipette 10uL of the corresponding dTTP dilute (except H12).
 
 For each column except for 12, and for control wells A12, C12, E12, and G12, pipette 4uL of Terminal Deoxynucleotidyl Transferase into each well (3 tubes). Multiple tubes of Terminal Deoxynucleotidyl Transferase will be added sequentially in row-major order, not pooled together. 
-**Note:** The TdT in column 12 was added separately after all of the other tubes. 
+**Note:** The TdT in column 12 was added separately after all of the other tubes at 1:11pm and the control TdT reactions were stopped at 2:13pm. 
 
 In wells B12, D12, and F12, pipette 4uL of Nuclease-Free water instead of TdT.
 
