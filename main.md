@@ -76,7 +76,7 @@ prepared before:
 
 For each well in each row, pipette 10uL of the corresponding dTTP dilute (except H12).
 
-For each column except for 12 pipette 4uL of Terminal Deoxynucleotidyl Transferase into each well. 
+For each column except for 12 pipette 4uL of Terminal Deoxynucleotidyl Transferase into each well (3 tubes). Multiple tubes of Terminal Deoxynucleotidyl Transferase will be added sequentially in row-major order, not pooled together.
 
 In column 12, pipette 4uL of Nuclease-Free water into each well (except H12) instead.
 
