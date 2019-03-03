@@ -58,7 +58,9 @@ Prepare Plate
 
 Into each well, pipette 6uL using a multichannel pipette from the TdT Buffer and CoCl2 mixture into each well except H12.
 
-For each row, create the following dilutions of dTTP from dilutes
+**Note:** Due to a small mistake, dTTP dilutes were added to the 96 well plate *before* buffer and CoCl2 mixtures. This should not make a difference, and we recommend that the original ordering be followed.
+
+For each row, create the following dilutions of dTTP from 1mM working stock
 prepared before:
 
 |Row       |dTTP Working Stock (1mM)| Water     |
