@@ -77,6 +77,7 @@ prepared before:
 For each well in each row, pipette 10uL of the corresponding dTTP dilute (except H12).
 
 For each column except for 12 pipette 4uL of Terminal Deoxynucleotidyl Transferase into each well. 
+
 In column 12, pipette 4uL of Nuclease-Free water into each well (except H12) instead.
 
 ## Begin Experiment
@@ -87,3 +88,7 @@ No Terminal Deoxynucleotidyl Transferase should be added to the controls in colu
 
 ## Sending to PAN
 In each well of a new 96 well plate, pipette 40uL of the DNA control solution. Pipette in 20uL from each corresponding well from the expirimental plate (A1 to A1, H12 to H12 etc). Keep the expirimental plate for running on a gel and submit the new plate to PAN for CE.
+
+## Practical Addendum of Mishaps
+
+B5 did not get nucleotides initially and this was fixed via a single channel pipetting.
