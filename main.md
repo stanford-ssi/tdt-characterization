@@ -48,7 +48,7 @@ For PAN analysis, we will be sending in Terminal Deoxynucleotidyl Transferase ex
 1. Dilute 39.1uL of BSStart (100uM, 6133Da) in 960.9uL of nuclease-free water for 1 mL of a 24 ng/uL (3.91 uM) working stock. Vortex well.
 2. Dilute 50uL 100mM dTTP Stock in 4950 uL water for 5000uL of 1mM working stock. Vortex well.
 4. Dilute 4.32 uL of 90-mer (AGTATT ... TAGACGTT, 100uM, 27786Da), 13.04 uL of 15Mer (ATGGACATGGACTAC, 100uM, 4601Da) and 12.56 uL of BS_Comp_8 (AACGCACA, 100uM, 2388Da) into 3970.08 uL Nuclease-Free water in a 15 mL tube. Vortex well before use. This is the DNA Control Solution, which is 3 ng/uL 90mer, 1.5 ng/uL 15mer, and .75 ng/uL BS_Comp_8 working stock. This will result in 1.0ng/uL, 0.5ng/uL and 0.25ng/uL final concentrations of 90nt, 15nt and 8nt control stands in samples sent to PAN.
-5. Prepare a trough of a mixture of 600uL 10x Buffer and 600uL 10x CoCl2.
+5. Prepare a trough of a mixture of 600uL 10x NEB TdT Buffer and 600uL 10x CoCl2.
 
 Procedure
 =========
